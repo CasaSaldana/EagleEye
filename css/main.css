@@ -1,0 +1,73 @@
+html {
+    font-family: 'PT Serif', serif;
+}
+
+#map {
+    height: 100vh;
+    width: 100vw;
+}
+
+#info {
+    width: 100vw;
+    height:100vh;
+    background: rgba(21, 21, 21, 0.88);
+    z-index: 5000;
+    position:absolute;
+    top:0;
+    transition: 200ms ease-in;
+    opacity: 0;
+    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#info.opened {
+    opacity: 1 !important;
+    display: flex;
+}
+
+#info #data {
+
+}
+
+#info #data span {
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #f5deb3;
+}
+
+#info #data span:nth-child(1) {
+    font-weight:600;
+}
+.menu {
+    position: relative;
+    float: right;
+    right: 10px;
+    top: 10px;
+    z-index: 10000;
+    width: 30px;
+    width: 30px;
+    height: 18px;
+    position: absolute;
+}
+
+
+
+.menu span {
+    position:absolute;
+    background: black;
+    width: 100%;
+    height: 3px;
+}
+.menu span:nth-child(1) {
+}
+
+.menu span:nth-child(2) {
+    top: 6px;
+}
+
+.menu span:nth-child(3) {
+    top: 12px;   
+}
