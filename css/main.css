@@ -26,10 +26,6 @@ html {
     display: flex;
 }
 
-#info #data {
-
-}
-
 #info #data span {
     display: block;
     text-align: center;
