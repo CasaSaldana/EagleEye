@@ -18491,7 +18491,7 @@ var Menu = function (_React$Component) {
                 }
 
                 _this2.setState({
-                    lines: arr
+                    addressLines: arr
                 });
             }, function (reason) {});
         }
@@ -18522,6 +18522,16 @@ var Menu = function (_React$Component) {
         key: 'render',
         value: function render() {
             var isOpened = this.state.opened;
+
+            var addressInfo = [];
+            var lines = this.state.addressLines;
+            for (var i = 0; i < lines.length; i++) {
+                addressInfo.push(_react2.default.createElement(
+                    'span',
+                    { key: i },
+                    lines[i]
+                ));
+            }
             return _react2.default.createElement(
                 'div',
                 { id: 'ui' },
@@ -18535,7 +18545,11 @@ var Menu = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'info' },
-                    _react2.default.createElement('div', { id: 'data' })
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'data' },
+                        addressInfo
+                    )
                 )
             );
         }

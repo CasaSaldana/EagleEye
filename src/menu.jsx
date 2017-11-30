@@ -35,7 +35,7 @@ export default class Menu extends React.Component {
                     arr.push(line);
                 }
                 this.setState({
-                    lines: arr
+                    addressLines: arr
                 });
             }, (reason) => {
     
@@ -66,6 +66,14 @@ export default class Menu extends React.Component {
 
     render() {
         const isOpened = this.state.opened;
+
+        const addressInfo = [];
+        let lines = this.state.addressLines;
+        for (let i = 0; i < lines.length; i++) {
+            addressInfo.push(
+                <span key={i}>{lines[i]}</span>
+            )
+        }
         return (
             <div id="ui">
                 <div className="menu" onClick={this.toggleMenu}>
@@ -76,6 +84,7 @@ export default class Menu extends React.Component {
                 
                 <div id="info">
                     <div id="data">
+                        {addressInfo}
                     </div>
                 </div>
             </div>
