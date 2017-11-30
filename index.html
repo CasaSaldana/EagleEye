@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <title>EagleEye</title>
     <meta name="description" content="Tracking">
-
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
-
 <body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="root"></div>
     <div id="ui">
         <div class="menu" onclick="toggleMenu()">
             <span></span>
@@ -27,12 +28,11 @@
      <div id="map"></div>
      <div id="info">
          <div id="data">
-
          </div>
      </div>
-      
     <script src="./js/pan.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./builds/app.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVo-f0IIK8eufTwMcku1mlSFjPoa3E00k&callback=initMap"></script>
 </body>
 

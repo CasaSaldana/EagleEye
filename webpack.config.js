@@ -19,7 +19,7 @@ for (let arg of process.argv) {
 
 module.exports = {
     entry: {
-        app: "./src/build.jsx"
+        app: "./src/app.jsx"
     },
     output: {
         path: path.join(__dirname, "builds"),
