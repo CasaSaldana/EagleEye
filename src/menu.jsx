@@ -14,9 +14,9 @@ export default class Menu extends React.Component {
     }
 
     componentWillUnmount() {
-  
+
     }
-    
+
     componentDidMount() {
         const ajax = new Ajax();
         const lat = this.props.lat;
@@ -24,11 +24,11 @@ export default class Menu extends React.Component {
         console.log('loading');
         console.log(lat, lng);
         // 
-        ajax.getJson('https://api.apple-mapkit.com/v1/reverseGeocode?loc='+ lat+'%2C' +lng +'&lang=en').then(
+        ajax.getJson('https://api.apple-mapkit.com/v1/reverseGeocode?loc=' + lat + '%2C' + lng + '&lang=en').then(
             (value) => {
                 console.log(value);
                 // var elem = document.getElementById('data');
-    
+
                 var infos = value.results[0];
                 let arr = [];
                 for (let line of infos.formattedAddressLines) {
@@ -38,13 +38,13 @@ export default class Menu extends React.Component {
                     addressLines: arr
                 });
             }, (reason) => {
-    
+
             }
         )
     }
 
     toggleMenu() {
-        
+
         this.setState({
             opened: !this.state.opened
         });
@@ -57,11 +57,11 @@ export default class Menu extends React.Component {
             } else {
                 el.style.display = 'none';
             }
-    
+
             setTimeout(() => {
                 el.classList.toggle('opened');
-            },  16);
-        }, 0);        
+            }, 16);
+        }, 0);
     }
 
     render() {
@@ -81,7 +81,7 @@ export default class Menu extends React.Component {
                     <span></span>
                     <span></span>
                 </div>
-                
+
                 <div id="info">
                     <div id="data">
                         {addressInfo}

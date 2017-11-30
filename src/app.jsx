@@ -16,7 +16,7 @@ export default class App extends React.Component {
 
     componentDidMount() {
         const ajax = new Ajax();
-        
+
         ajax.getJson('http://unreal.io/api/track').then(
             (value) => {
                 const lat = value.payload.data[0].latitude;
@@ -29,55 +29,38 @@ export default class App extends React.Component {
                 });
 
                 this.initMap();
-
-                // ajax.getJson('https://api.apple-mapkit.com/v1/reverseGeocode?loc='+ lat+'%2C' +long +'&lang=en').then(
-                //     (value) => {
-                //         console.log(value);
-                //         // var elem = document.getElementById('data');
-            
-                //         // var infos = value.results[0];
-            
-                //         // for (let line of infos.formattedAddressLines) {
-                //         //     const span = document.createElement('span');
-                //         //     span.textContent = line;
-                //         //     elem.appendChild(span);
-                //         // }
-                //     }, (reason) => {
-            
-                //     }
-                // )
             }
         );
     }
 
     componentWillUnmount() {
-        
+
     }
 
     initMap() {
         if (this.state.ready) {
-        let map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: new google.maps.LatLng(this.state.lat,this.state.lng),
-        mapTypeId: 'roadmap',
-        disableDefaultUI: false
-        });
+            let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: new google.maps.LatLng(this.state.lat, this.state.lng),
+                mapTypeId: 'roadmap',
+                disableDefaultUI: false
+            });
 
-        let marker = new google.maps.Marker({
-            position: new google.maps.LatLng(this.state.lat,this.state.lng),
-            map: map,
-            title: 'Eagle Eye'
-          });
+            let marker = new google.maps.Marker({
+                position: new google.maps.LatLng(this.state.lat, this.state.lng),
+                map: map,
+                title: 'Eagle Eye'
+            });
 
-        marker.set
+            marker.set
 
-        // Create a <script> tag and set the USGS URL as the source.
-        let script = document.createElement('script');
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-        document.getElementsByTagName('head')[0].appendChild(script);
-    } 
+            // Create a <script> tag and set the USGS URL as the source.
+            let script = document.createElement('script');
+            // This example uses a local copy of the GeoJSON stored at
+            // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+            script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
     }
 
     render() {
@@ -87,7 +70,7 @@ export default class App extends React.Component {
         return (
             <div>
                 {loaded &&
-                <Menu lat={lat} lng={lng}></Menu>
+                    <Menu lat={lat} lng={lng}></Menu>
                 }
                 <div id="map">
                 </div>
@@ -96,8 +79,8 @@ export default class App extends React.Component {
     }
 }
 
-  window.eqfeed_callback = function(results) {
+window.eqfeed_callback = function (results) {
 
-  }
+}
 
-render(<App/>, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
