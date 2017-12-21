@@ -21,14 +21,9 @@ export default class Menu extends React.Component {
         const ajax = new Ajax();
         const lat = this.props.lat;
         const lng = this.props.lng;
-        console.log('loading');
-        console.log(lat, lng);
         // 
         ajax.getJson('https://api.apple-mapkit.com/v1/reverseGeocode?loc=' + lat + '%2C' + lng + '&lang=en').then(
             (value) => {
-                console.log(value);
-                // var elem = document.getElementById('data');
-
                 var infos = value.results[0];
                 let arr = [];
                 for (let line of infos.formattedAddressLines) {
